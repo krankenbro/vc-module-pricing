@@ -1,6 +1,7 @@
 ---
 author: Maksim Kopnov
 date: 7/29/2020
+test
 ---
 # Pricing Module
 
