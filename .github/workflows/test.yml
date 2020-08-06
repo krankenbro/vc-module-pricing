@@ -17,6 +17,7 @@ jobs:
         shell: pwsh
         run: |
           echo "https://${{ secrets.REPO_USER }}:${{ secrets.REPO_PASS }}@github.com" > ~/.git-credentials
+          git config --global credential.helper store --file ~/.git-credentials
           git config --global user.name test_ci
           git config --global user.email ${{ secrets.REPO_USER }}
           git clone https://github.com/krankenbro/vc-module-image-tools.git
