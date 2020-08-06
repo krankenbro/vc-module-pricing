@@ -16,7 +16,7 @@ jobs:
       - name: Git Creds
         uses: fusion-engineering/setup-git-credentials@v2
         with:
-          credentials: "https://krankenbro:${{ REPO_TOKEN }}@github.com"
+          credentials: "https://krankenbro:${{ secrets.REPO_TOKEN }}@github.com"
 
       - name: Test Step
         shell: pwsh
