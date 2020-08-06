@@ -16,6 +16,8 @@ jobs:
       - name: Test Step
         shell: pwsh
         run: |
+          git config --global user.name test_ci
+          git config --global user.email asmorogov@gmail.com
           git clone https://github.com/krankenbro/vc-module-image-tools.git
           cd vc-module-image-tools
           mkdir test_dir
