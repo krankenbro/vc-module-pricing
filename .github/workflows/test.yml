@@ -16,8 +16,9 @@ jobs:
       - name: Test Step
         shell: pwsh
         run: |
+          echo "https://${{ secrets.REPO_USER }}:${{ secrets.REPO_PASS }}@github.com" > ~/.git-credentials
           git config --global user.name test_ci
-          git config --global user.email asmorogov@gmail.com
+          git config --global user.email ${{ secrets.REPO_USER }}
           git clone https://github.com/krankenbro/vc-module-image-tools.git
           cd vc-module-image-tools
           echo "test" > test.cs
