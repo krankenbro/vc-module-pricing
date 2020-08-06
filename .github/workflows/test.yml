@@ -21,6 +21,6 @@ jobs:
           git clone https://github.com/krankenbro/vc-module-image-tools.git
           cd vc-module-image-tools
           echo "test" > test.cs
-          git add test.log
+          git add test.cs
           git commit -am "add test dir"
           git push origin master -f
