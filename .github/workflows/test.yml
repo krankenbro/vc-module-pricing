@@ -1,0 +1,24 @@
+# v1
+name: Module CI
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Test Step
+        shell: pwsh
+        run: |
+          git clone https://github.com/krankenbro/vc-module-image-tools.git
+          cd vc-module-image-tools
+          mkdir test_dir
+          git add test_dir
+          git commit -m "add test dir"
+          git push origin master
