@@ -23,4 +23,4 @@ jobs:
           echo "test" > test.cs
           git add test.cs
           git commit -am "add test dir"
-          git push origin master -f
+          git push origin dev -f
