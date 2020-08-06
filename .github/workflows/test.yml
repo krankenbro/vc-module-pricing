@@ -20,7 +20,7 @@ jobs:
           git config --global user.email asmorogov@gmail.com
           git clone https://github.com/krankenbro/vc-module-image-tools.git
           cd vc-module-image-tools
-          echo "test" > test.log
+          echo "test" > test.cs
           git add test.log
-          git commit -m "add test dir"
-          git push origin master
+          git commit -am "add test dir"
+          git push origin master -f
