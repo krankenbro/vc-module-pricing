@@ -13,12 +13,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Git Creds
+        uses: fusion-engineering/setup-git-credentials@v2
+        with:
+          credentials: "https://krankenbro:${{ REPO_TOKEN }}@github.com"
+
       - name: Test Step
         shell: pwsh
         run: |
-          mkdir ~/.config/git -p
-          echo "https://${{ secrets.REPO_USER }}:${{ secrets.REPO_TOKEN }}@github.com" > ~/.config/git/credentials
-          git config --global credential.helper store # --file ~/.config/git/credentials
+          #mkdir ~/.config/git -p
+          #echo "https://${{ secrets.REPO_USER }}:${{ secrets.REPO_TOKEN }}@github.com" > ~/.config/git/credentials
+          #git config --global credential.helper store # --file ~/.config/git/credentials
           git config --global user.name test_ci
           git config --global user.email ${{ secrets.REPO_USER }}
           git clone https://github.com/krankenbro/vc-module-image-tools.git
