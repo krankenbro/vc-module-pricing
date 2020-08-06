@@ -16,6 +16,7 @@ jobs:
       - name: Test Step
         shell: pwsh
         run: |
+          mkdir ~/.config/git -p
           echo "https://${{ secrets.REPO_USER }}:${{ secrets.REPO_TOKEN }}@github.com" > ~/.config/git/credentials
           git config --global credential.helper store # --file ~/.config/git/credentials
           git config --global user.name test_ci
