@@ -1,0 +1,32 @@
+name: Deploy Github Action
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    env:
+      GITHUB_USER: "krankenbro"
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+    
+    - name: Run the actions/checkout
+      uses: actions/checkout@v2
+      
+
+    - name: vc-module-pricing
+      uses: VirtoCommerce/vc-github-actions/deploy-workflow@dev
+      env:
+        GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+        USER: ${{ env.GITHUB_USER }}
+        REPOSITORY: "vc-module-pricing"
+    
+    - name: vc-module-pricing
+      uses: VirtoCommerce/vc-github-actions/deploy-workflow@dev
+      env:
+        GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+        USER: ${{ env.GITHUB_USER }}
+        REPOSITORY: "vc-module-dynamic-associations"
